@@ -36,7 +36,7 @@ public class CoRoutine_Test : MonoBehaviour
         WaitForSeconds wfs = new WaitForSeconds(1);
         int n = 0;
 
-        while (true)
+        do
         {
             Debug.Log(n);
             n++;
@@ -45,6 +45,6 @@ public class CoRoutine_Test : MonoBehaviour
                 StopCoroutine(coRouSayHello);
             }
             yield return wfs;
-        }
+        } while (n <= 30);
     }
 }
