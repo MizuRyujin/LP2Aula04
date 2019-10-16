@@ -12,6 +12,7 @@ public class CoRoutine_Test : MonoBehaviour
     {
         coRouSayHello = StartCoroutine(SayHello());
         StartCoroutine(CountTill30());
+        StartCoroutine(InputCheck());
     }
 
     // Update is called once per frame
@@ -46,5 +47,16 @@ public class CoRoutine_Test : MonoBehaviour
             }
             yield return wfs;
         } while (n <= 30);
+    }
+
+    private IEnumerator InputCheck()
+    {
+        IEnumerator wait = new NewKeepWaiting();
+
+        while (true)
+        {
+            yield return wait;
+            Debug.Log("Input checked!!!!!");
+        }
     }
 }
